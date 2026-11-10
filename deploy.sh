@@ -11,9 +11,11 @@ echo "=========================================================="
 echo "🚀 Iniciando actualización de Mario's Landing Page..."
 echo "=========================================================="
 
-# 1. Obtener los últimos cambios desde GitHub
-echo "📥 [1/3] Descargando últimos cambios desde GitHub..."
-git pull origin main
+# 1. Obtener los últimos cambios desde GitHub de forma limpia
+echo "📥 [1/3] Sincronizando con la última versión de GitHub..."
+git fetch origin
+git reset --hard origin/main
+chmod +x deploy.sh
 
 # 2. Reconstruir la imagen y reiniciar el contenedor en segundo plano
 echo "🔨 [2/3] Reconstruyendo imagen y reiniciando contenedor..."
