@@ -1,0 +1,7 @@
+services:
+  landing-page:
+    build: .
+    container_name: mario-landing-page
+    restart: always
+    ports:
+      - "8083:80"
