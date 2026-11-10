@@ -17,6 +17,7 @@ git pull origin main
 
 # 2. Reconstruir la imagen y reiniciar el contenedor en segundo plano
 echo "🔨 [2/3] Reconstruyendo imagen y reiniciando contenedor..."
+docker compose down --remove-orphans 2>/dev/null || true
 docker compose up -d --build
 
 # 3. Limpiar imágenes huérfanas / antiguas para ahorrar espacio en disco
